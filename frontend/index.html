@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Couresly</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Couresly</h1>
+    <p class="subtitle">Upload your syllabi, get a todo list, calendar, or spreadsheet back.</p>
+
+    <form id="extract-form">
+      <label class="dropzone" id="dropzone" for="files">
+        <span id="dropzone-text">Drop syllabus files here, or click to choose</span>
+        <input type="file" id="files" name="files" multiple accept=".pdf,.docx,.md,.txt" hidden>
+      </label>
+      <ul id="file-list"></ul>
+
+      <label for="format">Output format</label>
+      <select id="format" name="format">
+        <option value="json">JSON (preview)</option>
+        <option value="md">Markdown notes (.md)</option>
+        <option value="ics">Calendar (.ics)</option>
+        <option value="xlsx">Spreadsheet (.xlsx)</option>
+      </select>
+
+      <button type="submit" id="submit-btn">Extract</button>
+    </form>
+
+    <div id="status"></div>
+    <div id="results"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

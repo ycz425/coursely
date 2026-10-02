@@ -1,0 +1,168 @@
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --border: #d9d9e0;
+  --text: #1a1a1f;
+  --muted: #6b6b76;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --error: #b42318;
+  --error-bg: #fef3f2;
+  --success-bg: #f0fdf4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15151a;
+    --surface: #1f1f26;
+    --border: #33333d;
+    --text: #ececf0;
+    --muted: #9b9ba6;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+    --error: #fca5a5;
+    --error-bg: #3a1f1f;
+    --success-bg: #16281c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 16px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#file-list {
+  list-style: none;
+  margin: -6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#file-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: -8px;
+}
+
+select, button {
+  font: inherit;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#status {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#results {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-card, .error-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+}
+
+.course-card {
+  background: var(--success-bg);
+}
+
+.error-card {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.course-card h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.course-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}

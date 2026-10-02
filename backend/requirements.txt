@@ -1,0 +1,8 @@
+google-genai
+pydantic
+pypdf
+python-dotenv
+fastapi
+openpyxl
+python-docx
+python-multipart
